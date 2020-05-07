@@ -16,7 +16,13 @@ function App() {
           component={SearchScreen}
           options={{ title: "Business Search" }}
         />
-        <Stack.Screen name="ResultShow" component={ResultShowScreen} />
+        <Stack.Screen
+          name="ResultShow"
+          component={ResultShowScreen}
+          options={({ route }) => ({
+            title: route.params.name,
+          })}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

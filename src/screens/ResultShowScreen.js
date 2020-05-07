@@ -7,12 +7,8 @@ const ResultShowScreen = ({ route }) => {
   const { id } = route.params;
 
   const getResult = async (id) => {
-    try {
-      const response = await yelp.get(`/${id}`);
-      setResult(response.data);
-    } catch (err) {
-      console.log(err);
-    }
+    const response = await yelp.get(`/${id}`);
+    setResult(response.data);
   };
 
   useEffect(() => {
@@ -23,7 +19,6 @@ const ResultShowScreen = ({ route }) => {
 
   return (
     <View>
-      <Text>{result.name}</Text>
       <FlatList
         data={result.photos}
         keyExtractor={(photo) => photo}
@@ -39,6 +34,7 @@ const styles = StyleSheet.create({
   image: {
     width: 200,
     height: 120,
+    marginVertical: 10,
   },
 });
 
