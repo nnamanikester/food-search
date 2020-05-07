@@ -14,7 +14,7 @@ function App() {
         <Stack.Screen
           name="Search"
           component={SearchScreen}
-          options={{ title: "Business Search" }}
+          options={{ title: "Food Search" }}
         />
         <Stack.Screen
           name="ResultShow"
